@@ -15,9 +15,9 @@ class TestHome extends StatelessWidget {
         counterProvider.overrideWithProvider(StateProvider<Counter>((ref) {
           return Counter();
         })),
-        commonCounterProvider.overrideWithProvider(StateProvider<Counter>((ref) {
-          return Counter();
-        }))
+        // commonCounterProvider.overrideWithProvider(StateProvider<Counter>((ref) {
+        //   return Counter();
+        // }))
       ],
       child: Column(
         children: [
