@@ -113,7 +113,7 @@ _flutter.loader = null;
         timeoutMillis = 4000,
       } = serviceWorkerOptions;
 
-      let serviceWorkerUrl = "flutter_service_worker.js?v=" + serviceWorkerVersion;
+      let serviceWorkerUrl = "flutter_riverpod_mutli_instance/flutter_service_worker.js?v=" + serviceWorkerVersion;
       let loader = navigator.serviceWorker.register(serviceWorkerUrl)
         .then((reg) => {
           if (!reg.active && (reg.installing || reg.waiting)) {
