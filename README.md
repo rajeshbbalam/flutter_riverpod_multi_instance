@@ -1,4 +1,4 @@
-# flutter_riverpod_mutli_instance
+# flutter_riverpod_multi_instance
 
 
 ## Getting Started
