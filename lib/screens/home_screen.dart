@@ -49,9 +49,9 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     TextSpan(
                         text: '$count',
-                        style: const TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold))
+                        style: const TextStyle(fontSize: 22, color: Colors.black, fontWeight: FontWeight.bold))
                   ],
-                  style: const TextStyle(fontSize: 14, color: Colors.black),
+                  style: const TextStyle(fontSize: 16, color: Colors.black),
                 ),
               ),
               // Text(
@@ -59,18 +59,24 @@ class HomeScreen extends StatelessWidget {
               //   style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               // ),
               Consumer(builder: (context, ref, child) {
-                return TextButton(
-                  // The read method is an utility to read a provider without listening to it
-                  onPressed: () {
-                    if (isLocalScopedProvider) {
-                      var countRef = ref.read(localScopedCounterProvider);
-                      ref.read(localScopedCounterProvider.notifier).state = Counter()..count = countRef.count + 1;
-                    } else {
-                      var commonRef = ref.read(parentScopedCounterProvider);
-                      ref.read(parentScopedCounterProvider.notifier).state = Counter()..count = commonRef.count + 1;
-                    }
-                  },
-                  child: const Icon(Icons.add),
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    // The read method is an utility to read a provider without listening to it
+                    onPressed: () {
+                      if (isLocalScopedProvider) {
+                        var countRef = ref.read(localScopedCounterProvider);
+                        ref.read(localScopedCounterProvider.notifier).state = Counter()..count = countRef.count + 1;
+                      } else {
+                        var commonRef = ref.read(parentScopedCounterProvider);
+                        ref.read(parentScopedCounterProvider.notifier).state = Counter()..count = commonRef.count + 1;
+                      }
+                    },
+                    child: const Text(
+                      "ADD",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
                 );
               }),
             ],

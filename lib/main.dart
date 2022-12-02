@@ -44,11 +44,11 @@ class RootScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 SizedBox(
-                  height: 250,
+                  height: 300,
                   child: Card(color: Colors.blue, child: HomeScreen(screenTitle: "Screen A")),
                 ),
                 SizedBox(
-                  height: 250,
+                  height: 300,
                   child: Card(color: Colors.green, child: HomeScreen(screenTitle: "Screen B")),
                 ),
               ],
@@ -57,11 +57,11 @@ class RootScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 SizedBox(
-                  height: 250,
+                  height: 300,
                   child: Card(color: Colors.blue, child: HomeScreen(screenTitle: "Screen A")),
                 ),
                 SizedBox(
-                  height: 250,
+                  height: 300,
                   child: Card(color: Colors.green, child: HomeScreen(screenTitle: "Screen B")),
                 ),
               ],
