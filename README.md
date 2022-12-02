@@ -1,4 +1,4 @@
-# Create Flutter RiverPod Multiple Instances
+# Create Flutter RiverPod Multiple Instances of StateProvider
 
 
 ## Getting Started
