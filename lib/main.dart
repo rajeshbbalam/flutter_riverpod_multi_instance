@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'multi_instances/testhome.dart';
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(const RiverPodMainApp());
@@ -16,28 +16,56 @@ class RiverPodMainApp extends StatefulWidget {
 class _RiverPodMainAppState extends State<RiverPodMainApp> {
   @override
   Widget build(BuildContext context) {
-    return ProviderScope(
+    return const ProviderScope(
       child: MaterialApp(
         home: Scaffold(
-          body: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 200,
-                height: 500,
-                child: TestHome(),
-              ),
-              const SizedBox(width: 1, height: 500, child: VerticalDivider(width: 1, color: Colors.black)),
-              SizedBox(
-                width: 200,
-                height: 500,
-                child: TestHome(),
-              ),
-            ],
+          body: Center(
+            child: RootScreen(),
           ),
         ),
       ),
+    );
+  }
+}
+
+class RootScreen extends StatelessWidget {
+  const RootScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    bool isHorizontalLayout = true;
+    if (width < 1024) {
+      isHorizontalLayout = false;
+    }
+    return Container(
+      child: isHorizontalLayout
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                SizedBox(
+                  height: 250,
+                  child: Card(color: Colors.blue, child: HomeScreen(screenTitle: "Screen A")),
+                ),
+                SizedBox(
+                  height: 250,
+                  child: Card(color: Colors.green, child: HomeScreen(screenTitle: "Screen B")),
+                ),
+              ],
+            )
+          : Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                SizedBox(
+                  height: 250,
+                  child: Card(color: Colors.blue, child: HomeScreen(screenTitle: "Screen A")),
+                ),
+                SizedBox(
+                  height: 250,
+                  child: Card(color: Colors.green, child: HomeScreen(screenTitle: "Screen B")),
+                ),
+              ],
+            ),
     );
   }
 }
