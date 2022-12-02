@@ -11,12 +11,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       overrides: [
-        localScopedCounterProvider.overrideWithProvider(StateProvider<Counter>((ref) {
-          return Counter();
-        })),
-        // commonCounterProvider.overrideWithProvider(StateProvider<Counter>((ref) {
-        //   return Counter();
-        // }))
+        localScopedCounterProvider.overrideWith((ref) => Counter()),
+        // parentScopedCounterProvider.overrideWith((ref) => Counter())
       ],
       child: Consumer(builder: (context, ref, child) {
         final countRef = ref.watch(localScopedCounterProvider);
