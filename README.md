@@ -1,6 +1,6 @@
-# flutter_riverpod_multi_instance
+# Create Flutter RiverPod Multiple Instances
 
 
 ## Getting Started
-[link](https://rajeshbbalam.github.io/flutter_riverpod_multi_instance/)
+[Demo](https://rajeshbbalam.github.io/flutter_riverpod_multi_instance/)
 
